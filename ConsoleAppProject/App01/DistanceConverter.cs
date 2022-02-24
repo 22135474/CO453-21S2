@@ -47,20 +47,29 @@ namespace ConsoleAppProject.App01
             string input = Console.ReadLine();
             switch (input)
             {
-                case "1": return "FEET"; break;
-                case "2": return "MILES"; break;
-                case "3": return "METRES"; break;
-                case "4": return "KELOMETER"; break;
-                case "5": return "MILLIMETER"; break;
-                case "6": return "INCH"; break;
+                case "1": return "FEET";
+                case "2": return "MILES";
+                case "3": return "METRES";
+                case "4": return "KELOMETER";
+                case "5": return "MILLIMETER";
+                case "6": return "INCH";
+                default: throw new InvalidOperationException("Please enter valid input.");
             }
-            return input.ToUpper();
         }
 
         private void InputFromDistance()
         {
-            Console.WriteLine("Please enter the number of " + fromUnit);
-            fromDistance = Convert.ToDouble(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Please enter the number of " + fromUnit);
+                fromDistance = Convert.ToDouble(Console.ReadLine());
+                if (fromDistance < 0)
+                    throw new InvalidOperationException("Can not input negitive number.");
+            }
+            catch
+            {
+                throw new InvalidOperationException("Invalid input - only input numbers.");
+            }
         }
 
         private void ConvertDistance()
