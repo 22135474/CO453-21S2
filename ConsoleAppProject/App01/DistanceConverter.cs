@@ -18,8 +18,6 @@ namespace ConsoleAppProject.App01
         private double toDistance;
         private double fromDistance;
 
-        public int Metres { get; }
-
         public DistanceConverter()
         {
             fromUnit = SelectUnit("Please choose a unit to convert FROM");
@@ -263,21 +261,11 @@ namespace ConsoleAppProject.App01
                 toDistance = fromDistance * 1;
                 Console.WriteLine("Well this is a pointless calculation isn't it...");
             }
-
         }
 
         private void PrintResult()
         {
             Console.WriteLine(fromDistance + " " + fromUnit + " is " + toDistance + " " + toUnit);
-        }
-
-        private void OutputHeading()
-        { 
-            Console.WriteLine(" =================================================");
-            Console.WriteLine("    App 01 DistanceConverter ");
-            Console.WriteLine("        by Stefan Allen                           ");
-            Console.WriteLine(" =================================================");
-            Console.WriteLine();
         }
     }
 }
