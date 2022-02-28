@@ -83,7 +83,7 @@ namespace ConsoleAppProject.App01
             }
             catch
             {
-                throw new InvalidOperationException("Invalid input - only input numbers.");
+                throw new InvalidOperationException("Invalid input - only input positive numbers.");
             }
         }
 
