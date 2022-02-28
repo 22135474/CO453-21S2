@@ -11,7 +11,9 @@ namespace ConsoleAppProject.App01
     /// </author>
 
     /// <summary>
-    ///
+    /// Measurements for conversion
+    /// Feet - Miles
+    /// Metres - Miles 
     /// </summary>
     public class DistanceConverter
     {
@@ -24,7 +26,8 @@ namespace ConsoleAppProject.App01
         private double fromDistance;
 
         /// <summary>
-        ///
+        /// For the user to select their input
+        /// Telling the user what to input to use the converter
         /// </summary>
         public DistanceConverter()
         {
@@ -36,7 +39,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        ///
+        /// Output for first prompt telling users which measurements are available
         /// </summary>
         private void OutputChoices()
         {
@@ -47,9 +50,10 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("5. Millimeter");
             Console.WriteLine("6. Inch");
         }
-        
+
         /// <summary>
-        ///
+        /// Output for second prompt telling users which measurements are available
+        /// allows the users to beable to select the unit they wish and gives error if needed 
         /// </summary>
         private string SelectUnit(string prompt)
         {
@@ -70,7 +74,8 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        ///
+        /// Allow the user to input the number of measurements the require
+        /// Also gives error messages for negative and invalid inputs 
         /// </summary>
         private void InputFromDistance()
         {
@@ -88,7 +93,7 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        ///
+        /// All the calculations for measurements of the app
         /// </summary>
         private void ConvertDistance()
         {
@@ -281,7 +286,8 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        ///
+        /// Prints the final result to the end user
+        /// session will also end after this is outputed
         /// </summary>
         private void PrintResult()
         {
