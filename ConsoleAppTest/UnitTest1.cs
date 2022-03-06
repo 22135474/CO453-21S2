@@ -1,11 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleAppProject.App01;
 
+/// <summary>
+/// Used to auto test checking if the values are correct 
+/// checks for 6 
+/// </summary>
 namespace ConsoleApp.Tests
 {
     [TestClass]
     public class TestDistanceConverter
     {
+        //Miles to feet test
         [TestMethod]
         public void TestMilesToFeet()
         {
@@ -28,6 +33,7 @@ namespace ConsoleApp.Tests
             Assert.AreEqual(expectedDistance, converter.ToDistance);
 
         }
+        //Feet to meters test
         [TestMethod]
         public void TestFeetToMeters()
         {
@@ -49,6 +55,7 @@ namespace ConsoleApp.Tests
 
             Assert.AreEqual(expectedDistance, converter.ToDistance);
         }
+        //Meters to kelometers test
         [TestMethod]
         public void TestMeterToKelometer()
         {
@@ -70,6 +77,7 @@ namespace ConsoleApp.Tests
 
             Assert.AreEqual(expectedDistance, converter.ToDistance);
         }
+        //Kelometers to miles test
         [TestMethod]
         public void TestKelometerToMiles()
         {
@@ -91,6 +99,7 @@ namespace ConsoleApp.Tests
 
             Assert.AreEqual(expectedDistance, converter.ToDistance);
         }
+        //Millimeters to feet test
         [TestMethod]
         public void TestMillimeterToFeet()
         {
@@ -112,6 +121,7 @@ namespace ConsoleApp.Tests
 
             Assert.AreEqual(expectedDistance, converter.ToDistance);
         }
+        //Inches to millimeters
         [TestMethod]
         public void TestInchToMeters()
         {
