@@ -1,29 +1,73 @@
 ﻿using System;
+using System.Runtime;
 
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// Convert distances based on user imputs 
-    /// Feet, Miles, metres, Kelometers, Millimeters and inches
+    /// distance cover that converts a chosen unit given by user to their preferred unit
     /// </summary>
     /// <author>
-    /// Stefan version 0.1
+    /// Nick Day version 0.2 - 05/02/21
     /// </author>
 
     /// <summary>
-    /// Measurements for conversion
-    /// Feet - Miles
-    /// Metres - Miles 
+    /// Value for maths calculations for each measurement
     /// </summary>
     public class DistanceConverter
     {
+        public const int FEET_IN_FEET = 1;
         public const int FEET_IN_MILES = 5280;
-        public const double METRES_IN_MILES = 1689.34;
+        public const double FEET_IN_METERS = 0.3048;
+        public const double FEET_IN_KELOMETER = 0.0003048;
+        public const double FEET_IN_MILLIMETER = 304.8;
+        public const int FEET_IN_INCH = 12;
 
-        private string toUnit;
-        private string fromUnit;
-        private double toDistance;
-        private double fromDistance;
+        public const int MILES_IN_FEET = 5280;
+        public const int MILES_IN_MILES = 1;
+        public const double MILES_IN_METERS = 1609.344;
+        public const double MILES_IN_KELOMETER = 1.609344;
+        public const double MILES_IN_MILLIMETER = 1609344;
+        public const int MILES_IN_INCH = 63360;
+
+        public const double METERS_IN_FEET = 3.2808398950131;
+        public const double METERS_IN_MILES = 0.00062137119223733;
+        public const int METERS_IN_METERS = 1;
+        public const double METERS_IN_KELOMETER = 0.001;
+        public const int METERS_IN_MILLIMETER = 1000;
+        public const double METERS_IN_INCH = 39.370078740157;
+
+        public const double KELOMETER_IN_FEET = 3280.8398950131;
+        public const double KELOMETER_IN_MILES = 0.62137119223733;
+        public const int KELOMETER_IN_METERS = 1000;
+        public const int KELOMETER_IN_KELOMETER = 1;
+        public const int KELOMETER_IN_MILLIMETER = 1000000;
+        public const double KELOMETER_IN_INCH = 39370.078740157;
+
+        public const double MILLIMETER_IN_FEET = 0.0032808398950131;
+        public const int MILLIMETER_IN_MILES = 1609344;
+        public const double MILLIMETER_IN_METERS = 0.001;
+        public const int MILLIMETER_IN_KELOMETER = 1000000;
+        public const int MILLIMETER_IN_MILLIMETER = 1;
+        public const double MILLIMETER_IN_INCH = 0.039370078740157;
+
+        public const double INCH_IN_FEET = 0.083333333333333;
+        public const int INCH_IN_MILES = 63360;
+        public const double INCH_IN_METERS = 0.0254;
+        public const double INCH_IN_KELOMETER = 39370.078740157;
+        public const double INCH_IN_MILLIMETER = 25.4;
+        public const int INCH_IN_INCH = 1;
+
+        public const string FEET = "FEET";
+        public const string MILES = "MILES";
+        public const string METERS = "METERS";
+        public const string KELOMETER = "KELOMETER";
+        public const string MILLIMETER = "MILLIMETER";
+        public const string INCH = "INCH";
+
+        public string ToUnit { get; set; }
+        public string FromUnit { get; set; }
+        public double ToDistance { get; set; }
+        public double FromDistance { get; set; }
 
         /// <summary>
         /// For the user to select their input
@@ -31,11 +75,13 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public DistanceConverter()
         {
-            fromUnit = SelectUnit("Please choose a unit to convert FROM");
-            toUnit = SelectUnit("Please choose a unit to convert TO");
+            /*
+            FromUnit = SelectUnit("Please choose a unit to convert FROM: ");
+            ToUnit = SelectUnit("Please choose a unit to convert TO: ");
             InputFromDistance();
             ConvertDistance();
             PrintResult();
+            */
         }
 
         /// <summary>
@@ -45,7 +91,7 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine("1. Feet");
             Console.WriteLine("2. Miles");
-            Console.WriteLine("3. Metres");
+            Console.WriteLine("3. Meters");
             Console.WriteLine("4. Kelometer");
             Console.WriteLine("5. Millimeter");
             Console.WriteLine("6. Inch");
@@ -65,7 +111,7 @@ namespace ConsoleAppProject.App01
             {
                 case "1": return "FEET";
                 case "2": return "MILES";
-                case "3": return "METRES";
+                case "3": return "METERS";
                 case "4": return "KELOMETER";
                 case "5": return "MILLIMETER";
                 case "6": return "INCH";
@@ -81,9 +127,9 @@ namespace ConsoleAppProject.App01
         {
             try
             {
-                Console.WriteLine("Please enter the number of " + fromUnit);
-                fromDistance = Convert.ToDouble(Console.ReadLine());
-                if (fromDistance < 0)
+                Console.WriteLine("Please enter the number of " + FromUnit);
+                FromDistance = Convert.ToDouble(Console.ReadLine());
+                if (FromDistance < 0)
                     throw new InvalidOperationException("Can not input negitive number.");
             }
             catch
@@ -92,206 +138,170 @@ namespace ConsoleAppProject.App01
             }
         }
 
-        /// <summary>
-        /// All the calculations for measurements of the app
-        /// </summary>
-        private void ConvertDistance()
+        ///<summary>
+        /// This method converts miles to feet
+        ///</summary>
+        public void ConvertDistance()
         {
-            //FEET conversion
-            if (fromUnit == "FEET" && toUnit == "MILES") //Feet to miles
+            // Convert Feet
+            if (FromUnit == "FEET" && ToUnit == "FEET") //FEET TO FEET
             {
-                toDistance = fromDistance / FEET_IN_MILES;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)FEET_IN_FEET;
             }
-            if (fromUnit == "FEET" && toUnit == "METRES") //Feet to metres
+            if (FromUnit == "FEET" && ToUnit == "MILES") //FEET TO MILES
             {
-                toDistance = fromDistance / 3.28084;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance / (double)FEET_IN_MILES;
             }
-            if (fromUnit == "FEET" && toUnit == "KELOMETER") //Feet to kelometers
+            if (FromUnit == "FEET" && ToUnit == "METERS") //FEET TO METRES
             {
-                toDistance = fromDistance * 0.000305;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)FEET_IN_METERS;
             }
-            if (fromUnit == "FEET" && toUnit == "MILLIMETER") //Feet to Millimeters
+            if (FromUnit == "FEET" && ToUnit == "KELOMETER") //FEET TO KELOMETER
             {
-                toDistance = fromDistance * 304.8;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)FEET_IN_KELOMETER;
             }
-            if (fromUnit == "FEET" && toUnit == "INCH") //feet to inches
+            if (FromUnit == "FEET" && ToUnit == "MILLIMETER") //FEET TO MILLIMETER
             {
-                toDistance = fromDistance / 12;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)FEET_IN_MILLIMETER;
             }
-            if (fromUnit == "FEET" && toUnit == "FEET") // Feet to feet 
+            if (FromUnit == "FEET" && ToUnit == "INCH") //FEET TO INCH
             {
-                toDistance = fromDistance - FEET_IN_MILES + FEET_IN_MILES;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
+                ToDistance = FromDistance * (double)FEET_IN_INCH;
             }
-            //MILES conversion
-            if (fromUnit == "MILES" && toUnit == "FEET") //Miles to feet
+            // Convert Miles
+            if (FromUnit == "MILES" && ToUnit == "FEET") //MILES TO FEET
             {
-                toDistance = fromDistance * FEET_IN_MILES;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILES_IN_FEET;
             }
-            if (fromUnit == "MILES" && toUnit == "METRES") //Miles to metres
+            if (FromUnit == "MILES" && ToUnit == "MILES") //MILES TO MILES
             {
-                toDistance = fromDistance * METRES_IN_MILES;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILES_IN_MILES;
             }
-            if (fromUnit == "MILES" && toUnit == "KELOMETER") //Miles to kelometers
+            if (FromUnit == "MILES" && ToUnit == "METERS") //MILES TO METRES
             {
-                toDistance = fromDistance / 1000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILES_IN_METERS;
             }
-            if (fromUnit == "MILES" && toUnit == "MILLIMETER") //Miles to Millimeters
+            if (FromUnit == "MILES" && ToUnit == "KELOMETER") //MILES TO KELOMETER
             {
-                toDistance = fromDistance * 1609350;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILES_IN_KELOMETER;
             }
-            if (fromUnit == "MILES" && toUnit == "INCH") //Miles to inches
+            if (FromUnit == "MILES" && ToUnit == "MILLIMETER") //MILES TO MILLIMETER
             {
-                toDistance = fromDistance / 63360;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILES_IN_MILLIMETER;
             }
-            if (fromUnit == "MILES" && toUnit == "MILES") //Miles to miles 
+            if (FromUnit == "MILES" && ToUnit == "INCH") //MILES TO INCH
             {
-                toDistance = fromDistance - FEET_IN_MILES + FEET_IN_MILES;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
+                ToDistance = FromDistance * (double)MILES_IN_INCH;
             }
-            //METRES conversion
-            if (fromUnit == "METRES" && toUnit == "FEET") //Metres to feet 
+            // Convert Meters
+            if (FromUnit == "METERS" && ToUnit == "FEET") //METERS TO FEET
             {
-                toDistance = fromDistance / 0.3048;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)METERS_IN_FEET;
             }
-            if (fromUnit == "METRES" && toUnit == "MILES") //metres to miles 
+            if (FromUnit == "METERS" && ToUnit == "MILES") //METERS TO MILES
             {
-                toDistance = fromDistance / METRES_IN_MILES;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)METERS_IN_MILES;
             }
-            if (fromUnit == "METRES" && toUnit == "KELOMETER") //Metres to kelometers 
+            if (FromUnit == "METERS" && ToUnit == "METERS") //METERS TO METRES
             {
-                toDistance = fromDistance / 1000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)METERS_IN_METERS;
             }
-            if (fromUnit == "METRES" && toUnit == "MILLIMETER") //Metres to millimeters 
+            if (FromUnit == "METERS" && ToUnit == "KELOMETER") //METERS TO KELOMETER
             {
-                toDistance = fromDistance * 1000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)METERS_IN_KELOMETER;
             }
-            if (fromUnit == "METRES" && toUnit == "INCH") //Metres to inches 
+            if (FromUnit == "METERS" && ToUnit == "MILLIMETER") //METERS TO MILLIMETER
             {
-                toDistance = fromDistance / 39.37;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)METERS_IN_MILLIMETER;
             }
-            if (fromUnit == "METRES" && toUnit == "METRES") //Metres to metres 
+            if (FromUnit == "METERS" && ToUnit == "INCH") //METERS TO INCH
             {
-                toDistance = fromDistance - METRES_IN_MILES + METRES_IN_MILES;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
+                ToDistance = FromDistance * (double)METERS_IN_INCH;
             }
-            //KELOMETER conversion
-            if (fromUnit == "KELOMETER" && toUnit == "FEET") //Kelometer to feet 
+            // Convert Kelometer
+            if (FromUnit == "KELOMETER" && ToUnit == "FEET") //KELOMETER TO FEET
             {
-                toDistance = fromDistance / 0.000305;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)KELOMETER_IN_FEET;
             }
-            if (fromUnit == "KELOMETER" && toUnit == "MILES") //kKelometer to miles 
+            if (FromUnit == "KELOMETER" && ToUnit == "MILES") //KELOMETER TO MILES
             {
-                toDistance = fromDistance * 1000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)KELOMETER_IN_MILES;
             }
-            if (fromUnit == "KELOMETER" && toUnit == "METRES") //Kelometer to metres 
+            if (FromUnit == "KELOMETER" && ToUnit == "METERS") //KELOMETER TO METRES
             {
-                toDistance = fromDistance * 1000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)KELOMETER_IN_METERS;
             }
-            if (fromUnit == "KELOMETER" && toUnit == "MILLIMETER") //Kelometer to millimeters 
+            if (FromUnit == "KELOMETER" && ToUnit == "KELOMETER") //KELOMETER TO KELOMETER
             {
-                toDistance = fromDistance * 1000000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)KELOMETER_IN_KELOMETER;
             }
-            if (fromUnit == "KELOMETER" && toUnit == "INCH") //Kelometer to inches 
+            if (FromUnit == "KELOMETER" && ToUnit == "MILLIMETER") //KELOMETER TO MILLIMETER
             {
-                toDistance = fromDistance / 39370.1;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)KELOMETER_IN_MILLIMETER;
             }
-            if (fromUnit == "KELOMETER" && toUnit == "KELOMETER") // kelometer to kelometers 
+            if (FromUnit == "KELOMETER" && ToUnit == "INCH") //KELOMETER TO INCH
             {
-                toDistance = fromDistance * 1;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
+                ToDistance = FromDistance * (double)KELOMETER_IN_INCH;
             }
-            //MILLIMETER conversion
-            if (fromUnit == "MILLIMETER" && toUnit == "FEET") //Millimeters to feet 
+            // Convert Millimeter
+            if (FromUnit == "MILLIMETER" && ToUnit == "FEET") //MILLIMETER TO FEET
             {
-                toDistance = fromDistance * 0.0032808399;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILLIMETER_IN_FEET;
             }
-            if (fromUnit == "MILLIMETER" && toUnit == "MILES") //Millimeters to miles 
+            if (FromUnit == "MILLIMETER" && ToUnit == "MILES") //MILLIMETER TO MILES
             {
-                toDistance = fromDistance / 1609344;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance / (double)MILLIMETER_IN_MILES;
             }
-            if (fromUnit == "MILLIMETER" && toUnit == "METERS") //Millimeter to meters 
+            if (FromUnit == "MILLIMETER" && ToUnit == "METERS") //MILLIMETER TO METRES
             {
-                toDistance = fromDistance * 0.001;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILLIMETER_IN_METERS;
             }
-            if (fromUnit == "MILLIMETER" && toUnit == "KELOMETER") //Millimeter to kelometers 
+            if (FromUnit == "MILLIMETER" && ToUnit == "KELOMETER") //MILLIMETER TO KELOMETER
             {
-                toDistance = fromDistance / 100000;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance / (double)MILLIMETER_IN_KELOMETER;
             }
-            if (fromUnit == "MILLIMETER" && toUnit == "INCH") //Millimeters to inches 
+            if (FromUnit == "MILLIMETER" && ToUnit == "MILLIMETER") //MILLIMETER TO MILLIMETER
             {
-                toDistance = fromDistance / 25.4;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)MILLIMETER_IN_MILLIMETER;
             }
-            if (fromUnit == "MILLIMETER" && toUnit == "MILLIMETER") //Millimeter to millimeter 
+            if (FromUnit == "MILLIMETER" && ToUnit == "INCH") //MILLIMETER TO INCH
             {
-                toDistance = fromDistance * 1;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
+                ToDistance = FromDistance * (double)MILLIMETER_IN_INCH;
             }
-            //INCH conversion
-            if (fromUnit == "INCH" && toUnit == "FEET") //Inch to feet 
+            // Convert Inch
+            if (FromUnit == "INCH" && ToUnit == "FEET") //INCH TO FEET
             {
-                toDistance = fromDistance * 0.0833333;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)INCH_IN_FEET;
             }
-            if (fromUnit == "INCH" && toUnit == "MILES") //Inch to miles 
+            if (FromUnit == "INCH" && ToUnit == "MILES") //INCH TO MILES
             {
-                toDistance = fromDistance * 63360;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance / (double)INCH_IN_MILES;
             }
-            if (fromUnit == "INCH" && toUnit == "METRES") //Inch to metres 
+            if (FromUnit == "INCH" && ToUnit == "METERS") //INCH TO METRES
             {
-                toDistance = fromDistance * 0.0254;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)INCH_IN_METERS;
             }
-            if (fromUnit == "INCH" && toUnit == "KELOMETER") //Inch to kelometers 
+            if (FromUnit == "INCH" && ToUnit == "KELOMETER") //INCH TO KELOMETER
             {
-                toDistance = fromDistance * 39370.1;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance / (double)INCH_IN_KELOMETER;
             }
-            if (fromUnit == "INCH" && toUnit == "MILLIMETER") //Inch to millimeters 
+            if (FromUnit == "INCH" && ToUnit == "MILLIMETER") //INCH TO MILLIMETER
             {
-                toDistance = fromDistance * 25.4;
-                Console.WriteLine("Calculation successful");
+                ToDistance = FromDistance * (double)INCH_IN_MILLIMETER;
             }
-            if (fromUnit == "INCH" && toUnit == "INCH") //Inch to inch 
+            if (FromUnit == "INCH" && ToUnit == "INCH") //INCH TO INCH
             {
-                toDistance = fromDistance * 1;
-                Console.WriteLine("Well this is a pointless calculation isn't it...");
-            }
+                ToDistance = FromDistance * (double)INCH_IN_INCH;
+            } 
         }
 
-        /// <summary>
-        /// Prints the final result to the end user
-        /// session will also end after this is outputed
-        /// </summary>
-        private void PrintResult()
+        ///<summary>
+        /// This method prints the miles and feet
+        ///</summary>
+        public void PrintResult()
         {
-            Console.WriteLine(fromDistance + " " + fromUnit + " is " + toDistance + " " + toUnit);
+            Console.WriteLine(FromDistance + " " + FromUnit + " is " + ToDistance + " " + ToUnit);
         }
+
     }
 }

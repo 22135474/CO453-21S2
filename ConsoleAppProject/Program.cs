@@ -16,7 +16,7 @@ namespace ConsoleAppProject
     {
         public static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             Console.WriteLine();
             Console.WriteLine(" =================================================");
@@ -36,6 +36,9 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
             DistanceConverter converter = new DistanceConverter();
+
+            converter.ConvertDistance();
+
         }
     }
 }
