@@ -292,7 +292,7 @@ namespace ConsoleAppProject.App01
             if (FromUnit == "INCH" && ToUnit == "INCH") //INCH TO INCH
             {
                 ToDistance = FromDistance * (double)INCH_IN_INCH;
-            } 
+            }
         }
 
         ///<summary>
