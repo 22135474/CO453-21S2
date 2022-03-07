@@ -7,7 +7,7 @@ namespace ConsoleAppProject.App01
     /// distance cover that converts a chosen unit given by user to their preferred unit
     /// </summary>
     /// <author>
-    /// Nick Day version 0.2 - 05/02/21
+    /// Stefan Allen
     /// </author>
 
     /// <summary>

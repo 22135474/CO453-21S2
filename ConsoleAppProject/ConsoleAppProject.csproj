@@ -31,15 +31,22 @@
     <Content Include="App01\Wiki\Screenshot 2022-02-28 %287%29.png" />
     <Content Include="App01\Wiki\Screenshot 2022-02-28 %288%29.png" />
     <Content Include="App01\Wiki\Screenshot 2022-03-06 202512.png" />
+    <Content Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.deps.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.runtimeconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="App01\ClassDiagram1.cd" />
     <None Include="App01\Wiki\D.drawio" />
+    <None Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.exe" />
+    <None Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.pdb" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="App01 - New\Wiki\" />
+    <Folder Include="bin\Release\netcoreapp3.1\" />
   </ItemGroup>
 
 </Project>

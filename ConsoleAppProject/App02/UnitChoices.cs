@@ -4,6 +4,7 @@ namespace ConsoleAppProject.App02
 {
     /// <summary>
     /// <author>
+    /// Units for calulations
     /// Stefan Allen
     /// </author>
     public enum UnitChoices

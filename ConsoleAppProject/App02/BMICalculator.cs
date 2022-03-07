@@ -4,6 +4,7 @@ using System;
 namespace ConsoleAppProject.App02
 {
     /// <summary>
+    /// Setting values for weight classes and measurements
     /// <author>
     /// Stefan Allen
     /// </author>
@@ -24,6 +25,7 @@ namespace ConsoleAppProject.App02
         public const string CLASS_III_OBESE = "Class III Obese";
 
         public double Feet { get; set; }
+        public double Grams { get; set; }
         public double Inches { get; set; }
         public double Metres { get; set; }
         public double Centimetres { get; set; }
@@ -38,6 +40,8 @@ namespace ConsoleAppProject.App02
         public double BMI { get; set; }
 
         /// <summary>
+        /// Runs the application though run method and displays in cli
+        /// allows user to input their measurements and calculate their bmi to be displayed
         /// <author>
         /// Stefan Allen
         /// </author>
@@ -60,6 +64,9 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
+        /// If the user selects imperial and gives the user the inputs they need to define 
+        /// weight and height
+        /// Feet/inches and stones/pounds
         /// Stefan Allen
         /// </author>
         private void InputMeasurement()
@@ -76,24 +83,30 @@ namespace ConsoleAppProject.App02
                 Stones = ConsoleHelper.InputNumber($" {UnitsList.Stones} > ");
                 Pounds = ConsoleHelper.InputNumber($" {UnitsList.Pounds} > ");
             }
-
+            /// <summary>
+            /// <author>
+            /// If the user selects metric and gives the user the inputs they need to define 
+            /// weight and height
+            /// metres/centimeres and kilograms/grams
+            /// Stefan Allen
+            /// </author>
             if (UnitChoice.Equals(UnitChoices.Metric))
             {
-                Console.WriteLine($" Please enter your Height in {UnitsList.Centimetres}");
+                Console.WriteLine($" Please enter your Height in {UnitsList.Metres} and " +
+                    $"{UnitsList.Centimetres}");
+                Metres = ConsoleHelper.InputNumber($" {UnitsList.Metres} > ");
                 Centimetres = ConsoleHelper.InputNumber($" {UnitsList.Centimetres} > ");
                 Console.WriteLine();
-                Console.WriteLine($" Please enter your Weight in {UnitsList.Grams}");
+                Console.WriteLine($" Please enter your Weight in {UnitsList.Kilograms} and" +
+                    $" {UnitsList.Grams}");
                 Kilograms = ConsoleHelper.InputNumber($" {UnitsList.Kilograms} > ");
+                Grams = ConsoleHelper.InputNumber($" {UnitsList.Grams} > ");
             }
         }
 
         /// <summary>
         /// <author>
-        /// Stefan Allen
-        /// </author>
-
-        /// <summary>
-        /// <author>
+        /// Selecter for imperial or metric unit
         /// Stefan Allen
         /// </author>
         private UnitChoices SelectUnit(string prompt)
@@ -113,6 +126,7 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
+        /// allows the user to selct which unit to use 
         /// Stefan Allen
         /// </author>
         private static UnitChoices ExecuteChoice(int choice)
@@ -128,6 +142,7 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
+        /// maths for converting each unit
         /// Stefan Allen
         /// </author>
         public void CalculateBMI()
@@ -149,6 +164,7 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
+        /// weight Catagories
         /// Stefan Allen
         /// </author>
         public void CatagoriesBMI()
@@ -181,6 +197,7 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
+        /// out to display the users bmi 
         /// Stefan Allen
         /// </author>
         public void OutputBMI()

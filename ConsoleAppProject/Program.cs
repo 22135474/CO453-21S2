@@ -9,6 +9,7 @@ namespace ConsoleAppProject
     {
         public static void Main(string[] args)
         {
+            //Main header output
             Console.ForegroundColor = ConsoleColor.Cyan;
 
             Console.WriteLine();
@@ -17,6 +18,7 @@ namespace ConsoleAppProject
             Console.WriteLine(" ================================================= ");
             Console.WriteLine();
 
+            //selecter for different apps
             string[] choices =
             {
                 " Distance Converter",
@@ -27,7 +29,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
             int choice = ConsoleHelper.SelectChoice(choices);
-
+            //if 1 run app 1 DistanceConverter if 2 run app 2 BMICalculator
             switch (choice)
             {
                 case 1:
