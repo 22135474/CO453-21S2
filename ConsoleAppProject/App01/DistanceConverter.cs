@@ -15,6 +15,10 @@ namespace ConsoleAppProject.App01
     /// </summary>
     public class DistanceConverter
     {
+        public void Run()
+        {
+        }
+
         public const int FEET_IN_FEET = 1;  
         public const int FEET_IN_MILES = 5280;
         public const double FEET_IN_METERS = 0.3048;
@@ -75,13 +79,11 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public DistanceConverter()
         {
-            /*
             FromUnit = SelectUnit("Please choose a unit to convert FROM: ");
             ToUnit = SelectUnit("Please choose a unit to convert TO: ");
             InputFromDistance();
             ConvertDistance();
             PrintResult();
-            */
         }
 
         /// <summary>

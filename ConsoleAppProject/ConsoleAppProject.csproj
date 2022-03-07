@@ -3,6 +3,43 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject></StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="App01\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="App01\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="App01\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App01\DistanceConverter.cs" />
+    <Compile Include="App01\DistanceUnits.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %2801%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %2802%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %283%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %284%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %285%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %286%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %287%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-02-28 %288%29.png" />
+    <Content Include="App01\Wiki\Screenshot 2022-03-06 202512.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App01\ClassDiagram1.cd" />
+    <None Include="App01\Wiki\D.drawio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App01 - New\Wiki\" />
+  </ItemGroup>
 
 </Project>
