@@ -19,7 +19,7 @@ namespace ConsoleAppProject.App01
         {
         }
 
-        public const int FEET_IN_FEET = 1;  
+        public const int FEET_IN_FEET = 1;
         public const int FEET_IN_MILES = 5280;
         public const double FEET_IN_METERS = 0.3048;
         public const double FEET_IN_KELOMETER = 0.0003048;
@@ -304,6 +304,5 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine(FromDistance + " " + FromUnit + " is " + ToDistance + " " + ToUnit);
         }
-
     }
 }
