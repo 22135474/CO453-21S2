@@ -207,6 +207,7 @@ namespace ConsoleAppProject.App02
                 $"You are in the {Category} Range" +
                 "\n If your are BAME, you could be at a higher risk!" +
                 "\n Children who have obesity are more likely to have High blood pressure and high cholesterol" +
+                "\n Adults 23.0 have an increased risk - Adults 27.5 have a high risk" +
                 "\n WHO Weight Status / BMI kg/m2" +
                 "\n Underweight       / 18.5 - 24.9" +
                 "\n Overweight        / 25.0 - 29.9" +
