@@ -5,7 +5,7 @@ namespace ConsoleAppProject.App02
     /// <summary>
     /// <author>
     /// units for measurements    
-    /// /// Stefan Allen
+    /// Stefan Allen
     /// </author>
     public enum UnitsList
     {
