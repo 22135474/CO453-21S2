@@ -83,13 +83,7 @@ namespace ConsoleAppProject.App02
                 Stones = ConsoleHelper.InputNumber($" {UnitsList.Stones} > ");
                 Pounds = ConsoleHelper.InputNumber($" {UnitsList.Pounds} > ");
             }
-            /// <summary>
-            /// <author>
-            /// If the user selects metric and gives the user the inputs they need to define 
-            /// weight and height
-            /// metres/centimeres and kilograms/grams
-            /// Stefan Allen
-            /// </author>
+
             if (UnitChoice.Equals(UnitChoices.Metric))
             {
                 Console.WriteLine($" Please enter your Height in {UnitsList.Metres} and " +
