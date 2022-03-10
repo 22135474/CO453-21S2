@@ -27,4 +27,50 @@ namespace ConsoleAppProject.App03
         [Description("BSc(Hons) First Class")]
         A
     }
+    public void Run()
+        {
+            ConsoleHelper.OutputHeading("BMI Calulator");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine();
+            Console.WriteLine(" ================================================= ");
+            Console.WriteLine("    BNU CO453 Applications Programming 2021-2022  ");
+            Console.WriteLine("    By Stefan Allen  ");
+            Console.WriteLine(" ================================================= ");
+            Console.WriteLine();
+
+            InputStudent();
+
+            CalculateMark ();
+
+            OutputResult();
+
+            StudentSort();
+
+            PrintPieChart();
+        }
+
+        private void InputStudent()
+        {
+
+        }
+
+        private void CalculateMark()
+        {
+
+        }
+
+        private void OutputResult()
+        {
+
+        }
+
+        private void StudentSort() {
+
+        }
+
+        private void PrintPieChart()
+        {
+
+        }
 }

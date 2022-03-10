@@ -40,6 +40,10 @@ namespace ConsoleAppProject
                     BMICalculator app02 = new BMICalculator();
                     app02.Run();
                     break;
+                    case 3:
+                    Grades app03 = new Grades();
+                    converter.Run();
+                    break;
                 default:
                     break;
             }
