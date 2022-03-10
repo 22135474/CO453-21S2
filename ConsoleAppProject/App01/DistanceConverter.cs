@@ -8,16 +8,14 @@ namespace ConsoleAppProject.App01
     /// </summary>
     /// <author>
     /// Stefan Allen
-    /// </author>
+    /// </author>>
 
     /// <summary>
     /// Value for maths calculations for each measurement
     /// </summary>
     public class DistanceConverter
     {
-        public void Run()
-        {
-        }
+        public void Run() { }
 
         public const int FEET_IN_FEET = 1;
         public const int FEET_IN_MILES = 5280;
@@ -101,7 +99,7 @@ namespace ConsoleAppProject.App01
 
         /// <summary>
         /// Output for second prompt telling users which measurements are available
-        /// allows the users to beable to select the unit they wish and gives error if needed 
+        /// allows the users to beable to select the unit they wish and gives error if needed
         /// </summary>
         private string SelectUnit(string prompt)
         {
@@ -111,19 +109,26 @@ namespace ConsoleAppProject.App01
             string input = Console.ReadLine();
             switch (input)
             {
-                case "1": return "FEET";
-                case "2": return "MILES";
-                case "3": return "METERS";
-                case "4": return "KELOMETER";
-                case "5": return "MILLIMETER";
-                case "6": return "INCH";
-                default: throw new InvalidOperationException("Please enter valid input.");
+                case "1":
+                    return "FEET";
+                case "2":
+                    return "MILES";
+                case "3":
+                    return "METERS";
+                case "4":
+                    return "KELOMETER";
+                case "5":
+                    return "MILLIMETER";
+                case "6":
+                    return "INCH";
+                default:
+                    throw new InvalidOperationException("Please enter valid input.");
             }
         }
 
         /// <summary>
         /// Allow the user to input the number of measurements the require
-        /// Also gives error messages for negative and invalid inputs 
+        /// Also gives error messages for negative and invalid inputs
         /// </summary>
         private void InputFromDistance()
         {

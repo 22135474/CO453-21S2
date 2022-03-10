@@ -64,7 +64,7 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
-        /// If the user selects imperial and gives the user the inputs they need to define 
+        /// If the user selects imperial and gives the user the inputs they need to define
         /// weight and height
         /// Feet/inches and stones/pounds
         /// Stefan Allen
@@ -73,26 +73,32 @@ namespace ConsoleAppProject.App02
         {
             if (UnitChoice.Equals(UnitChoices.Imperial))
             {
-                Console.WriteLine($" Please enter your Height in {UnitsList.Feet} and " +
-                    $"{UnitsList.Inches}");
+                Console.WriteLine(
+                    $" Please enter your Height in {UnitsList.Feet} and " + $"{UnitsList.Inches}"
+                );
                 Feet = ConsoleHelper.InputNumber($" {UnitsList.Feet} > ");
                 Inches = ConsoleHelper.InputNumber($" {UnitsList.Inches} > ");
                 Console.WriteLine();
-                Console.WriteLine($" Please enter your Weight in {UnitsList.Stones} and" +
-                    $" {UnitsList.Pounds}");
+                Console.WriteLine(
+                    $" Please enter your Weight in {UnitsList.Stones} and" + $" {UnitsList.Pounds}"
+                );
                 Stones = ConsoleHelper.InputNumber($" {UnitsList.Stones} > ");
                 Pounds = ConsoleHelper.InputNumber($" {UnitsList.Pounds} > ");
             }
 
             if (UnitChoice.Equals(UnitChoices.Metric))
             {
-                Console.WriteLine($" Please enter your Height in {UnitsList.Metres} and " +
-                    $"{UnitsList.Centimetres}");
+                Console.WriteLine(
+                    $" Please enter your Height in {UnitsList.Metres} and "
+                        + $"{UnitsList.Centimetres}"
+                );
                 Metres = ConsoleHelper.InputNumber($" {UnitsList.Metres} > ");
                 Centimetres = ConsoleHelper.InputNumber($" {UnitsList.Centimetres} > ");
                 Console.WriteLine();
-                Console.WriteLine($" Please enter your Weight in {UnitsList.Kilograms} and" +
-                    $" {UnitsList.Grams}");
+                Console.WriteLine(
+                    $" Please enter your Weight in {UnitsList.Kilograms} and"
+                        + $" {UnitsList.Grams}"
+                );
                 Kilograms = ConsoleHelper.InputNumber($" {UnitsList.Kilograms} > ");
                 Grams = ConsoleHelper.InputNumber($" {UnitsList.Grams} > ");
             }
@@ -105,11 +111,7 @@ namespace ConsoleAppProject.App02
         /// </author>
         private UnitChoices SelectUnit(string prompt)
         {
-            string[] choices =
-            {
-                $" {UnitChoices.Imperial}",
-                $" {UnitChoices.Metric}"
-            };
+            string[] choices = { $" {UnitChoices.Imperial}", $" {UnitChoices.Metric}" };
 
             Console.WriteLine(prompt);
             Console.WriteLine();
@@ -120,17 +122,20 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
-        /// allows the user to selct which unit to use 
+        /// allows the user to selct which unit to use
         /// Stefan Allen
         /// </author>
         private static UnitChoices ExecuteChoice(int choice)
         {
             switch (choice)
             {
-                case 1: return UnitChoices.Imperial;
-                case 2: return UnitChoices.Metric;
+                case 1:
+                    return UnitChoices.Imperial;
+                case 2:
+                    return UnitChoices.Metric;
 
-                default: return UnitChoices.NoUnit;
+                default:
+                    return UnitChoices.NoUnit;
             }
         }
 
@@ -191,23 +196,25 @@ namespace ConsoleAppProject.App02
 
         /// <summary>
         /// <author>
-        /// out to display the users bmi 
+        /// out to display the users bmi
         /// Stefan Allen
         /// </author>
         public void OutputBMI()
         {
             Console.WriteLine();
-            Console.WriteLine($" Your BMI is {BMI}. " +
-                $"You are in the {Category} Range" +
-                "\n If your are BAME, you could be at a higher risk!" +
-                "\n Children who have obesity are more likely to have High blood pressure and high cholesterol" +
-                "\n Adults 23.0 have an increased risk - Adults 27.5 have a high risk" +
-                "\n WHO Weight Status / BMI kg/m2" +
-                "\n Underweight       / 18.5 - 24.9" +
-                "\n Overweight        / 25.0 - 29.9" +
-                "\n Obese Class I	   / 30.0 - 34.9" +
-                "\n Obese Class II	   / 35.0 - 39.9" +
-                "\n Obese Class III   / >= 40.0");
+            Console.WriteLine(
+                $" Your BMI is {BMI}. "
+                    + $"You are in the {Category} Range"
+                    + "\n If your are BAME, you could be at a higher risk!"
+                    + "\n Children who have obesity are more likely to have High blood pressure and high cholesterol"
+                    + "\n Adults 23.0 have an increased risk - Adults 27.5 have a high risk"
+                    + "\n WHO Weight Status / BMI kg/m2"
+                    + "\n Underweight       / 18.5 - 24.9"
+                    + "\n Overweight        / 25.0 - 29.9"
+                    + "\n Obese Class I	   / 30.0 - 34.9"
+                    + "\n Obese Class II	   / 35.0 - 39.9"
+                    + "\n Obese Class III   / >= 40.0"
+            );
         }
     }
 }
