@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net6.0\CoverletSourceRootsMapping" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
@@ -16,6 +26,22 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsoleAppProject\ConsoleAppProject.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net6.0\cs\" />
+    <Folder Include="bin\Debug\net6.0\de\" />
+    <Folder Include="bin\Debug\net6.0\es\" />
+    <Folder Include="bin\Debug\net6.0\fr\" />
+    <Folder Include="bin\Debug\net6.0\it\" />
+    <Folder Include="bin\Debug\net6.0\ja\" />
+    <Folder Include="bin\Debug\net6.0\ko\" />
+    <Folder Include="bin\Debug\net6.0\pl\" />
+    <Folder Include="bin\Debug\net6.0\pt-BR\" />
+    <Folder Include="bin\Debug\net6.0\ru\" />
+    <Folder Include="bin\Debug\net6.0\tr\" />
+    <Folder Include="bin\Debug\net6.0\zh-Hans\" />
+    <Folder Include="bin\Debug\net6.0\zh-Hant\" />
   </ItemGroup>
 
 </Project>

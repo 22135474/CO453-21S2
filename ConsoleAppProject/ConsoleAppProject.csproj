@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="App01\ClassDiagram1.cd" />
     <None Include="App01\Wiki\D.drawio" />
     <None Include="bin\Debug\netcoreapp3.1\ConsoleAppProject.dll" />

@@ -1,0 +1,111 @@
+
+ =================================================
+    BNU CO453 Applications Programming 2021-2022
+ =================================================
+
+ Which Application would you like to use ?
+
+    1.   Distance Converter
+    2.   BMI Calculator
+    3.   Student Grades
+
+ Please enter your choice > 3
+
+ ---------------------------------
+    Student Grades App 03
+     by Stefan Allen
+ ---------------------------------
+
+    1.   Input Marks
+    2.   MeanMark
+    3.   GradePercentage
+    4.   MinMarkMaxmark
+    5.   Quit
+
+ Please enter your choice > 1
+
+Please enter a mark for each student
+
+Bob enter mark > 10
+Ross enter mark > 20
+Evey enter mark > 30
+Jack enter mark > 40
+Mo enter mark > 50
+Arbaaz enter mark > 60
+AK enter mark > 70
+Stefan enter mark > 80
+Nick enter mark > 90
+Ben enter mark > 100
+Bob's Mark = 100, Grade = A
+Ross's Mark = 20, Grade = F
+Evey's Mark = 30, Grade = F
+Jack's Mark = 40, Grade = D
+Mo's Mark = 50, Grade = C
+Arbaaz's Mark = 60, Grade = B
+AK's Mark = 70, Grade = A
+Stefan's Mark = 80, Grade = A
+Nick's Mark = 90, Grade = A
+Ben's Mark = 100, Grade = A
+    1.   Input Marks
+    2.   MeanMark
+    3.   GradePercentage
+    4.   MinMarkMaxmark
+    5.   Quit
+
+ Please enter your choice > 2
+
+Give 10 student grades:
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Mean Grade: 55
+    1.   Input Marks
+    2.   MeanMark
+    3.   GradePercentage
+    4.   MinMarkMaxmark
+    5.   Quit
+
+ Please enter your choice > 3
+
+Enter mark > 69
+69% out of 100
+    1.   Input Marks
+    2.   MeanMark
+    3.   GradePercentage
+    4.   MinMarkMaxmark
+    5.   Quit
+
+ Please enter your choice >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

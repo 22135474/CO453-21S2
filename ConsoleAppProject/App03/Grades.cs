@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+
 namespace ConsoleAppProject.App03
 {
     /// <summary>
@@ -11,66 +11,21 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public enum Grades
     {
-        [Display(Name = "Fail")]
-        [Description("Referred")]
+        [Description("Invalid")]
+        X,
+        [Description("Fail")]
         F,
-        [Display(Name = "III")]
-        [Description("BSc(Hons) Third Class")]
+        [Description("Third Class")]
         D,
-        [Display(Name = "II-2")]
-        [Description("BSc(Hons) Lower Second")]
+        [Description("Lower Second")]
         C,
-        [Display(Name = "II-1")]
-        [Description("BSc(Hons) Upper Second")]
+        [Description("Upper Second")]
         B,
-        [Display(Name = "1st")]
-        [Description("BSc(Hons) First Class")]
-        A
+        [Description("First Class")]
+        A,
+        [Description("Mark")]
+        Mark
+
+
     }
-    public void Run()
-        {
-            ConsoleHelper.OutputHeading("BMI Calulator");
-            Console.ForegroundColor = ConsoleColor.Cyan;
-
-            Console.WriteLine();
-            Console.WriteLine(" ================================================= ");
-            Console.WriteLine("    BNU CO453 Applications Programming 2021-2022  ");
-            Console.WriteLine("    By Stefan Allen  ");
-            Console.WriteLine(" ================================================= ");
-            Console.WriteLine();
-
-            InputStudent();
-
-            CalculateMark ();
-
-            OutputResult();
-
-            StudentSort();
-
-            PrintPieChart();
-        }
-
-        private void InputStudent()
-        {
-
-        }
-
-        private void CalculateMark()
-        {
-
-        }
-
-        private void OutputResult()
-        {
-
-        }
-
-        private void StudentSort() {
-
-        }
-
-        private void PrintPieChart()
-        {
-
-        }
 }
