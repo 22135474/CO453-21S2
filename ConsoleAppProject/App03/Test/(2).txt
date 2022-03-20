@@ -82,30 +82,30 @@ Enter mark > 69
     4.   MinMarkMaxmark
     5.   Quit
 
- Please enter your choice >
+ Please enter your choice > 4
+
+Enter the Number of values to find Smallest and Largest Number: 10
+Enter the No 1:10
+Enter the No 2:20
+Enter the No 3:30
+Enter the No 4:40
+Enter the No 5:50
+Enter the No 6:60
+Enter the No 7:70
+Enter the No 8:80
+Enter the No 9:90
+Enter the No 10:100
+The smallest Value is 10
+The Largest Value is 100
+5    1.   Input Marks
+    2.   MeanMark
+    3.   GradePercentage
+    4.   MinMarkMaxmark
+    5.   Quit
+
+ Please enter your choice > 5
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+C:\Users\stefa\OneDrive\Documents\GitHub\CO453-21S2\ConsoleAppProject\bin\Debug\netcoreapp3.1\ConsoleAppProject.exe (process 24060) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
