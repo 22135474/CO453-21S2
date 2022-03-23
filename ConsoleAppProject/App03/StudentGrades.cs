@@ -11,11 +11,17 @@ namespace ConsoleAppProject.App03
         public int[] Marks { get; set; }
         public int[] GradeProfile { get; set; }
 
+        /// <summary>
+        /// Console run In cyan colour 
+        /// Input for student names/marks in array 
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         public void Run()
         {
             ConsoleHelper.OutputHeading("Student Grades App 03");
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Students = new string[] { "Bob", "Ross", "Evey", "Jack", "Mo", "Arbaaz", "AK", "Stefan", 
+            Students = new string[] { "Bob", "Ross", "Evey", "Jack", "Mo", "Arbaaz", "AK", "Stefan",
             "Nick", "Ben"};
             Marks = new int[Students.Length];
 
@@ -29,6 +35,11 @@ namespace ConsoleAppProject.App03
             OutputMenuChoices();
         }
 
+        /// <summary>
+        /// Output for console for user select 
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         public void OutputMenuChoices()
         {
             string[] choices =
@@ -44,6 +55,11 @@ namespace ConsoleAppProject.App03
             choice = ExecuteChoice(choices);
         }
 
+        /// <summary>
+        /// Run's the command for number selected by user 
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private int ExecuteChoice(string[] choices)
         {
             int choice;
@@ -68,9 +84,6 @@ namespace ConsoleAppProject.App03
                         MinMarkMaxmark();
                         break;
                     case 5:
-                        FullDetailedGrade();
-                        break;
-                    case 6:
                         exit();
                         break;
                     default:
@@ -82,6 +95,11 @@ namespace ConsoleAppProject.App03
             return choice;
         }
 
+        /// <summary>
+        /// Grade boundarys for final grades
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         public Grades ConvertToGrade(int mark)
         {
             if (mark >= 0 && mark < 39)
@@ -110,6 +128,11 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// For user to input student marks
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private void InputMarks()
         {
             Console.WriteLine("Please enter a mark for each student \n");
@@ -122,6 +145,11 @@ namespace ConsoleAppProject.App03
             };
         }
 
+        /// <summary>
+        /// Give mean mark from user input 
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private void MeanMark()
         {
             int[] numbers;
@@ -146,13 +174,17 @@ namespace ConsoleAppProject.App03
             int aver = sum / numbers.Length; Console.WriteLine("Mean Grade: {0}", aver);
         }
 
-
+        /// <summary>
+        /// Gives min/max mark for 10 students
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private void MinMarkMaxmark()
         {
             int i;
             int[] a = new int[30];
             Console.Write("Enter the Number of values to find Smallest and Largest Number: ");
-            int n = Convert.ToInt16(Console.ReadLine()); 
+            int n = Convert.ToInt16(Console.ReadLine());
 
             for (i = 1; i <= n; i++)
             {
@@ -171,35 +203,44 @@ namespace ConsoleAppProject.App03
                     }
                 }
             }
-            Console.WriteLine("The smallest Value is " + a[1]); 
+            Console.WriteLine("The smallest Value is " + a[1]);
             Console.WriteLine("The Largest Value is " + a[n]);
             Console.ReadKey();
         }
-    
+
+        /// <summary>
+        /// Outputs the students grade out of 100 in percentage 
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         static void GradePercentage()
         {
             int mark = (int)ConsoleHelper.InputNumber($"Enter mark > ", 0, 100);
             int sum = mark;
-            Console.WriteLine($"{mark}% out of 100"); 
+            Console.WriteLine($"{mark}% out of 100");
         }
-
-        private void FullDetailedGrade()
-        {
-            
-        }
-
+        /// <summary>
+        /// Exits the program
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private void exit()
         {
             System.Environment.Exit(1);
         }
 
+        /// <summary>
+        /// Output final grades with there name/mark/grade
+        /// <author>
+        /// Stefan Allen
+        /// </author>
         private void OutputGrades()
         {
             for (int i = 0; i < 10; i++)
             {
                 int mark = Marks[i];
                 Grades grade = ConvertToGrade(mark);
-                
+
                 Console.WriteLine($"{Students[i]}'s Mark = {mark}, Grade = {grade}");
             }
         }
