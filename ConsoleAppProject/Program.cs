@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -11,7 +12,7 @@ namespace ConsoleAppProject
         public static void Main(string[] args)
         {
             //Main header output
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine();
             Console.WriteLine(" ================================================= ");
@@ -25,13 +26,14 @@ namespace ConsoleAppProject
                 " Distance Converter",
                 " BMI Calculator",
                 " Student Grades",
+                " Social Posts",
             };
 
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Which Application would you like to use ?");
             Console.WriteLine();
 
             int choice = ConsoleHelper.SelectChoice(choices);
-            //if 1 run app 1 DistanceConverter if 2 run app 2 BMICalculator
             switch (choice)
             {
                 case 1:
@@ -42,9 +44,13 @@ namespace ConsoleAppProject
                     BMICalculator app02 = new BMICalculator();
                     app02.Run();
                     break;
-                    case 3:
+                case 3:
                     StudentGrades app03 = new StudentGrades();
                     app03.Run();
+                    break;
+                case 4:
+                    NewsApp socialApp = new NewsApp();
+                    socialApp.DisplayMenu();
                     break;
                 default:
                     break;

@@ -129,7 +129,7 @@ namespace ConsoleAppProject.Helpers
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Green;
         }
 
         /// <summary>
