@@ -214,7 +214,7 @@ namespace ConsoleAppProject.App04
             foreach (Post post in posts)
             {
                 post.Display();
-                Console.WriteLine(); 
+                Console.WriteLine();
             }
         }
     }
