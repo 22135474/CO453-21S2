@@ -5,7 +5,12 @@ namespace ConsoleAppProject.App04
 {
     public class NewsApp
     {
-
+        /// <summary>
+        /// Stores posty for the new of them user in the application 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private NewsFeed news = new NewsFeed();
 
         public NewsFeed NewsFeed
@@ -16,6 +21,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Display output for user to select which task they want to execute 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void DisplayMenu()
         {
             ConsoleHelper.OutputHeading(" Social Posts");
@@ -72,6 +83,12 @@ namespace ConsoleAppProject.App04
             while (!wantToQuit);
         }
 
+        /// <summary>
+        /// For users to be able to like and dislike and display on the feed post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void LikePosts()
         {
             ConsoleHelper.OutputTitle("Like or Unlike a Post");
@@ -98,6 +115,12 @@ namespace ConsoleAppProject.App04
 
         }
 
+        /// <summary>
+        /// Adds a comment to the post allowing users to write a message under post  
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void AddComment()
         {
             ConsoleHelper.OutputTitle("Add a comment to a Post");
@@ -108,6 +131,12 @@ namespace ConsoleAppProject.App04
             news.AddPostComment(id, comment);
         }
 
+        /// <summary>
+        /// Allow the user to display all the posts by a specific user 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void DisplayByAuthor()
         {
             Console.WriteLine("Enter the name of user you want to display > ");
@@ -117,11 +146,23 @@ namespace ConsoleAppProject.App04
             news.DisplayAuthorPost(author);
         }
 
+        /// <summary>
+        /// Displays all post in the social media application 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void DisplayAll()
         {
             news.Display();
         }
 
+        /// <summary>
+        /// Allows user to remove a post from the app 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void RemovePost()
         {
             ConsoleHelper.OutputTitle($"Removing a Post");
@@ -131,6 +172,12 @@ namespace ConsoleAppProject.App04
             news.RemovePost(id);
         }
 
+        /// <summary>
+        /// Allows the user to show an image and a message 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void PostImage()
         {
             ConsoleHelper.OutputTitle("Posting an Photo");
@@ -150,6 +197,12 @@ namespace ConsoleAppProject.App04
             post.Display();
         }
 
+        /// <summary>
+        /// Allows the user to write a simple message to post on there feed
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private void PostMessage()
         {
             ConsoleHelper.OutputTitle("Posting an message");
@@ -167,6 +220,13 @@ namespace ConsoleAppProject.App04
 
         }
 
+        /// <summary>
+        /// Just a way for users to enter there name
+        /// it also makes it easier to code as can just call it 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         private string InputName()
         {
             Console.Write("Please enter your name > ");

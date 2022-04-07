@@ -11,6 +11,12 @@ namespace ConsoleAppProject.App04
 
         private readonly List<Post> posts;
 
+        /// <summary>
+        /// Allows to set defult message that are already in the app when ran
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public NewsFeed()
         {
             posts = new List<Post>();
@@ -31,15 +37,34 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Adds a message to the post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void AddMessagePost(MessagePost message)
         {
             posts.Add(message);
         }
 
+        /// <summary>
+        /// Adds a photo to the post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void AddPhotoPost(PhotoPost photo)
         {
             posts.Add(photo);
         }
+
+        /// <summary>
+        /// Allows find by user to work
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void DisplayAuthorPost(string author)
         {
             foreach (Post post in posts)
@@ -51,6 +76,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Adds the time to the users post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void FindDate(string date)
         {
             foreach (Post post in posts)
@@ -61,6 +92,13 @@ namespace ConsoleAppProject.App04
                 }
             }
         }
+
+        /// <summary>
+        /// Adds a comment to the post and displays error if wrong
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void AddPostComment(int id, string text)
         {
             Post post = FindPost(id);
@@ -77,6 +115,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Adds a like to the post and displays error if wrong
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void LikePost(int id)
         {
             Post post = FindPost(id);
@@ -93,6 +137,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Adds a dislike to the post and displays error if wrong
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void UnlikePost(int id)
         {
             Post post = FindPost(id);
@@ -109,6 +159,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// Allows the user to remove a post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void RemovePost(int id)
         {
             Post post = FindPost(id);
@@ -126,6 +182,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// allows user to find a post 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public Post FindPost(int id)
         {
             foreach (Post post in posts)
@@ -139,6 +201,12 @@ namespace ConsoleAppProject.App04
             return null;
         }
 
+        /// <summary>
+        /// Allows user to display all posts 
+        /// </summary>
+        /// <author>
+        /// Stefan Allen
+        /// </author>>
         public void Display()
         {
             ConsoleHelper.OutputTitle("Display All Posts");

@@ -2,6 +2,12 @@
 
 namespace ConsoleAppProject.App04
 {
+    /// <summary>
+    /// Class for photo posting based around an file name, caption and author
+    /// </summary>
+    /// <author>
+    /// Stefan Allen
+    /// </author>>
     public class PhotoPost : Post
     {
         public String Filename { get; set; }
